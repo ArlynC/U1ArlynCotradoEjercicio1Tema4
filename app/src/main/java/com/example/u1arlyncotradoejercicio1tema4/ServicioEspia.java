@@ -29,26 +29,7 @@ public class ServicioEspia extends Service {
     @Override //notificacion
     public int onStartCommand(Intent intenc, int flags, int idArranque) {
 
-        Intent intencionLlamar = new Intent(Intent.ACTION_DIAL,
-                Uri.parse("tel:555123456"));
-        PendingIntent intencionPendienteLlamar =
-                PendingIntent.getActivity(this,0, intencionLlamar,0);
 
-        NotificationCompat.Builder notific = new NotificationCompat.Builder(this);
-        NotificationManager notificationManager = (NotificationManager)
-                getSystemService(Context.NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { //si es mayor a android oreo=8
-            NotificationChannel notificationChannel =
-                    new NotificationChannel(
-                            NOTIFICATION_CHANNEL_ID,
-                            NOTIFICATION_CHANNEL_NAME,
-                            NotificationManager.IMPORTANCE_LOW);
-            notificationChannel.enableLights(true);
-            notificationChannel.setLightColor(R.color.colorAccent);
-            notificationManager.createNotificationChannel(notificationChannel);
-            notific.setChannelId(NOTIFICATION_CHANNEL_ID);
-
-        }
         return START_STICKY;
     }
     @Override public IBinder onBind(Intent intencion) {

@@ -89,6 +89,8 @@ public class ReceptorLlamada extends BroadcastReceiver {
                         notificacion.setChannelId(NOTIFICATION_CHANNEL_ID);
                     }
                     notificationManager.notify(1, notificacion.build());
+
+
                 }
             }
         }
