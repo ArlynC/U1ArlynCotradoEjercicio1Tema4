@@ -28,6 +28,7 @@ public class ServicioEspia extends Service {
 
     @Override //notificacion
     public int onStartCommand(Intent intenc, int flags, int idArranque) {
+
         Intent intencionLlamar = new Intent(Intent.ACTION_DIAL,
                 Uri.parse("tel:555123456"));
         PendingIntent intencionPendienteLlamar =
